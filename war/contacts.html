@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Business Bank</title>
+<script language="javascript">
+function validate()
+{
+	
+	var phno=document.getElementById("phoneno").value;
+   	var email=document.getElementById("email").value;
+	var status1=document.getElementById("status1");
+	var status2=document.getElementById("status2");
+	var phreg=/^\d*$/;
+	var emreg=/^[a-zA-Z]\\w*[\\._]*\\w*@[a-z]*.[a-z]*/;
+	valid=true;
+
+	if(phno.length==12 && phno.match(phreg))
+	{
+		valid=true;
+	}
+	else 
+	{
+		status1.innerHTML="Enter a proper Phone No";
+		valid=false;
+	}
+
+	if(email.match(emreg))
+	{
+		valid=true;
+	}
+	else 
+	{
+		status2.innerHTML="Enter a proper e-mail id";
+		valid=false;
+	}
+	return valid;
+}
+</script>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="page">
+	<div id="page-bgtop">
+
+<div id="content">
+<div class="post">
+
+<h2 class="title">Change Contact Details</h2>
+
+<div class="entry">
+
+<h3 class="title">To edit your contact information fill the details and click on submit</h3>
+
+<form name="form1" action="" method="get" onSubmit="return validate()" >
+
+<table>
+
+<tr>
+<td class="status" colspan="2" name="status1" id="status1"></td>
+</tr>
+
+<tr>
+<td><label>Phone No</label></td>
+<td><input type="text" name="phoneno" id="phoneno" size="10"/></td>
+</tr>
+
+<tr>
+<td><label>Current Address</label></td>
+<td><textarea name="curradd" rows="4" cols="25"></textarea></td>
+</tr>
+
+<tr>
+<td><label>Permanent Address</label></td>
+<td><textarea name="permadd" rows="4" cols="25"></textarea></td>
+</tr>
+
+<tr>
+<td class="status" colspan="2" name="status2" id="status2"></td>
+</tr>
+
+<tr>
+<td><label>Email Id</label></td>
+<td><input type="text" name="email" id="email" size="20"/></td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="submit" value="Submit"/></td>	
+</tr>
+
+</table>
+</form>
+
+</div>
+
+		<!-- end #content -->    
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
